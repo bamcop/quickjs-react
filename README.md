@@ -16,3 +16,8 @@ bun run index.js
 ```sh
 npx esbuild --loader:.js=jsx --platform=node --bundle index.js --outfile=index.bundle_esbuild_cli.js
 ```
+
+#### 3. bundle use esbuild golang api
+```sh
+go run examples/bundle/main.go
+```
