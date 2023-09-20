@@ -1,0 +1,4 @@
+github.com/buke/quickjs-go v0.1.14 h1:o7Jiq1t2lGcYjwAikOGCUQ54+w3D/2LIfGR3NAlrpvw=
+github.com/buke/quickjs-go v0.1.14/go.mod h1:SDDaB5DLYvtwVMN2tiDxTeY3A4fRXBAuJO1R/FJaGqo=
+github.com/buke/quickjs-go-polyfill v0.0.5 h1:5rY4ZDMnwB9y94mig056CZdHPSrY7RsiU2aIGoSRMzo=
+github.com/buke/quickjs-go-polyfill v0.0.5/go.mod h1:GEmBUscNSZVj9IGb4bpqG5KY+3hrqAq/iOONPBmU/1g=
