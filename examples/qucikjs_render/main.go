@@ -3,7 +3,6 @@ package main
 import (
 	"os"
 	"path/filepath"
-	"time"
 
 	"github.com/bamcop/kit"
 	"github.com/bamcop/kit/debug"
@@ -29,7 +28,7 @@ func init() {
 	srcCode = string(b)
 }
 
-func main() {
+func EvalRenderToString() {
 	// Create a new runtime
 	rt := quickjs.NewRuntime()
 	defer rt.Close()
@@ -50,10 +49,8 @@ func main() {
 	ret, err := ctx.Eval(pf.TryCatchWrap(srcCode))
 	defer ret.Free()
 	kit.Try(err)
+}
 
-	// Wait for the timeout to finish
-	time.Sleep(time.Millisecond * 100)
-
-	err = rt.ExecuteAllPendingJobs()
-	kit.Try(err)
+func main() {
+	EvalRenderToString()
 }
