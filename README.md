@@ -21,3 +21,13 @@ npx esbuild --loader:.js=jsx --bundle index.js --outfile=index.bundle_esbuild_cl
 ```sh
 go run examples/bundle/main.go
 ```
+
+### summary
+```shell
+(base) ➜ go run examples/qucikjs_render/main.go
+<h1>Hello, world!</h1><button>You clicked me <!-- -->0<!-- --> times</button>
+(base) ➜ node examples/render_to_string/index.bundle_esbuild_cli.js
+<h1>Hello, world!</h1><button>You clicked me <!-- -->0<!-- --> times</button>
+(base) ➜ node examples/render_to_string/index.bundle_esbuild_go_api.js
+<h1>Hello, world!</h1><button>You clicked me <!-- -->0<!-- --> times</button>
+```
