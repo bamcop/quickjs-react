@@ -20,7 +20,7 @@ func main() {
 		Bundle:        true,
 		Write:         true,
 		LogLevel:      api.LogLevelInfo,
-		Platform:      api.PlatformNode,
+		Platform:      api.PlatformDefault,
 		Loader:        map[string]api.Loader{".js": api.LoaderJSX},
 	})
 

@@ -7,6 +7,7 @@ import (
 
 	"github.com/bamcop/kit"
 	"github.com/bamcop/kit/debug"
+	pf "github.com/bamcop/quickjs-react/pkg/polyfill"
 	"github.com/buke/quickjs-go"
 	polyfill "github.com/buke/quickjs-go-polyfill"
 )
@@ -39,7 +40,7 @@ func main() {
 	// Inject polyfills to the context
 	polyfill.InjectAll(ctx)
 
-	ret, err := ctx.Eval(srcCode)
+	ret, err := ctx.Eval(pf.TryCatchWrap(srcCode))
 	defer ret.Free()
 	kit.Try(err)
 
