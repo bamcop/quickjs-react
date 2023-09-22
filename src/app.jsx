@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function App() {
   return (
-      <div id="root">
+      <div id="root" className='bg-green-500'>
         <h1>Hello, world!</h1>
         <Counter />
       </div>
