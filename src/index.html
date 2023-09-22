@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickJS React</title>
+</head>
+<body>
+    <h1>Hello Golang</h1>
+
+    <script src="static/libs/react/18.2.0/umd/react.development.js"></script>
+    <script src="static/libs/react-dom/18.2.0/umd/react-dom.development.min.js"></script>
+    <script type="module">
+      import App from "/app.client.js"
+      window.App = App
+
+      ReactDOM.hydrateRoot(document.getElementById("root"), App());
+    </script>
+</body>
+</html>
