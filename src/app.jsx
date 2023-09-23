@@ -1,10 +1,12 @@
 import React from 'react'
+import QSwitch from './components/qswitch'
 
 export default function App() {
   return (
-      <div id="root" className='bg-green-500'>
+      <div id="root">
         <h1>Hello, world!</h1>
         <Counter />
+        <QSwitch />
       </div>
   );
 }

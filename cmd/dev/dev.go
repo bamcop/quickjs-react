@@ -6,10 +6,12 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 
 	"github.com/bamcop/kit"
 	"github.com/bamcop/kit/debug"
+	"github.com/bamcop/quickjs-react/pkg/js_parser"
 	pf "github.com/bamcop/quickjs-react/pkg/polyfill"
 	"github.com/bamcop/quickjs-react/pkg/polyfill/text_encoder"
 	"github.com/buke/quickjs-go"
@@ -65,10 +67,19 @@ func main() {
 			return
 		}
 
-		str := strings.ReplaceAll(string(b), `import React from "react";`, "")
+		var (
+			code    = string(b)
+			reg     = regexp.MustCompile(`import.*;`)
+			matches = reg.FindAllStringSubmatch(code, -1)
+		)
+
+		for _, olds := range matches {
+			news := js_parser.ReplaceReactImport(olds[0])
+			code = strings.ReplaceAll(code, olds[0], news)
+		}
 
 		c.Writer.Header().Set("Content-Type", `application/javascript`)
-		_, _ = c.Writer.WriteString(str)
+		_, _ = c.Writer.WriteString(code)
 		c.Status(http.StatusOK)
 	})
 
