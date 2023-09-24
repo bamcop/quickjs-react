@@ -1,7 +1,10 @@
 # README
+Run React SSR with Golang using QuickJS
 
-## Why?
-react islands with golang
+## Run
+```sh
+go run cmd/dev/dev.go
+```
 
 ## examples
 ### render_to_string
