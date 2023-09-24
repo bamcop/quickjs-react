@@ -1,5 +1,5 @@
 # README
-Run React SSR with Golang using QuickJS
+Run React SSR with Golang using QuickJS and Esbuild
 
 ## Run
 ```sh
