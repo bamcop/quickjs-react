@@ -10,6 +10,9 @@ import (
 // ReplaceReactImport
 // TODO ugly, need fix
 func ReplaceReactImport(str string) string {
+	if strings.Contains(str, "__toESM") {
+		return str
+	}
 	pkg := strings.Split(str, `"`)[1]
 	if pkg != "react" {
 		return str

@@ -66,6 +66,7 @@ func main() {
 			})
 			return
 		}
+		//os.WriteFile(filepath.Join(RootDir, "tmp", "app.client.js"), b, 0644)
 
 		var (
 			code    = string(b)
@@ -77,6 +78,8 @@ func main() {
 			news := js_parser.ReplaceReactImport(olds[0])
 			code = strings.ReplaceAll(code, olds[0], news)
 		}
+
+		code = strings.ReplaceAll(code, `__require("react")`, `React`)
 
 		c.Writer.Header().Set("Content-Type", `application/javascript`)
 		_, _ = c.Writer.WriteString(code)
