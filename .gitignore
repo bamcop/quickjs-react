@@ -22,7 +22,7 @@ yarn-error.log*
 *.sw*
 
 # Language
-go.work
+# go.work
 go.work.sum
 
 # Custom
